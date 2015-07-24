@@ -1,5 +1,5 @@
 * {
-  font-family: "Segoe UI",'Open Sans', sans-serif;
+  font-family: 'Open Sans Condensed', 'Open Sans', "Segoe UI Light", sans-serif;
 }
 
 .wrapper {
@@ -97,6 +97,10 @@ a {
 
 .content h3 {
     font-weight: lighter;
+}
+
+.content em {
+    font-weight: 200;
 }
 
 .email {
