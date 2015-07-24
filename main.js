@@ -5,9 +5,13 @@
 
 $(document).ready(function(){
     $('#content_panel').load('/about.html');   //load the about me
+    resize();
+
     $('.active').toggleClass("active");         //turn off all active buttons
     $('#about').toggleClass("active");          //toggle the about me as active
-    resize();
+
+    $(".item>.sublist").hide();
+
 });
 
 /*
@@ -43,6 +47,8 @@ function setActive(element)
 {
     $('.active').toggleClass("active"); //turn off all active elements
     element.toggleClass("active");      //set the current element to active
+    $('.item>.sublist').slideUp();         //hide all the sublists
+    element.find('.sublist').slideDown();
 }
 
 /*
