@@ -4,9 +4,9 @@
  */
 
 $(document).ready(function(){
-    $('#content_panel').load('./about.html');
-    $('.active').toggleClass("active");
-    $('#about').toggleClass("active");
+    $('#content_panel').load('/about.html');   //load the about me
+    $('.active').toggleClass("active");         //turn off all active buttons
+    $('#about').toggleClass("active");          //toggle the about me as active
     resize();
 });
 
@@ -15,28 +15,35 @@ $(document).ready(function(){
  */
 $( "#about" ).click(function() {
     $('#content_panel').load('/about.html');
-    $('.active').toggleClass("active");
-    $('#about').toggleClass("active");
+    setActive($("#about"));
 });
 $( "#projects" ).click(function() {
     $('#content_panel').load('/projects.html');
-    $('.active').toggleClass("active");
-    $('#projects').toggleClass("active");
+    setActive($("#projects"));
 });
 
 /*
- * Download resume rather than displaying
+ * Open Resume in new window
  */
-$('#resume').click(function() {
+$("#resume").click(function() {
     var win = window.open('/content/Resume/david_etler.pdf', '_blank');
     if(win) {
         //Browser has allowed it to be opened
         win.focus();
     } else {
-        //Broswer has blocked it
-        alert('Please allow popups for this site');
+        //if popups are blocked, just open the resume here
+        window.location.href = '/content/Resume/david_etler.pdf';
     }
 });
+
+/*
+ * Sets the specified element as active, and deactivates all others
+ */
+function setActive(element)
+{
+    $('.active').toggleClass("active"); //turn off all active elements
+    element.toggleClass("active");      //set the current element to active
+}
 
 /*
  * Comand to run when window is resized, or first created
