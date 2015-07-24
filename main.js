@@ -23,12 +23,19 @@ $( "#projects" ).click(function() {
     $('.active').toggleClass("active");
     $('#projects').toggleClass("active");
 });
-$("#resume").click(function() {
-    $('.active').toggleClass("active");
-    $('#resume').toggleClass("active");
 
-    window.location="/content/Resume/david_etler.pdf";
-
+/*
+ * Download resume rather than displaying
+ */
+$('#resume').click(function() {
+    var win = window.open('/content/Resume/david_etler.pdf', '_blank');
+    if(win) {
+        //Browser has allowed it to be opened
+        win.focus();
+    } else {
+        //Broswer has blocked it
+        alert('Please allow popups for this site');
+    }
 });
 
 /*
