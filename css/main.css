@@ -1,5 +1,5 @@
 * {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Segoe UI",'Open Sans', sans-serif;
 }
 
 .wrapper {
@@ -110,6 +110,7 @@ a {
 .skilllist li {
     font-size: 13pt;
 }
+
 
 .skill_heading {
     font-style: normal;
