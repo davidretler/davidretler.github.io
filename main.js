@@ -43,6 +43,15 @@ function resize()
         $(".sidebar").width(180);
     }
 
+    //if the content panel is too tall, extend the sidebar for the entire document
+    if($(document).height() > $(window).height()) {
+        $(".sidebar").height($(".content").height());
+    }
+    //otherwise set the length to the screen length (can't use else in case previous expression made the document smaller)
+    if ($('.content').height() < $(window).height()) {
+        $(".sidebar").height($(window).height() - $(".sidebar").offset().top);
+    }
+
 
 }
 $(window).on('resize',function(){
