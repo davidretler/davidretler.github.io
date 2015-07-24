@@ -1,71 +1,65 @@
 <html>
+
+<head>
+
+<link href='fonts/Open_Sans' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<script src="scripts/jquery-1.11.3.min.js"></script>
+
+
+</head>
+
 <body>
-
-  <link href='fonts/Open_Sans' rel='stylesheet' type='text/css' />
-  <link rel="stylesheet" type="text/css" href="css/main.css" />
-
-
 <div id="wrapper">
 
   <div class="header">David Etler</div>
 
   <div class="sidebar">
-    <span class="item"><a href="index.html">About Me</a></span>
+    <span class="item" id="about">About Me</span>
 
-    <span class="item"><a href="projects.html">Projects</a>
+    <span class="item" id="projects">Projects
       <ul>
-        <li><a href="projects.html#rsa">RSA Encryption</a></li>
-        <li><a href="projects.html#compression">Image Compression</a></li>
-        <li><a href="projects.html#nbody">N-Body Simulator</a></li>
+        <li>RSA Encryption</li>
+        <li>Image Compression</li>
+        <li>N-Body Simulator</li>
       </ul>
   </span>
   </div>
 
-  <div class="content">
-
-    <h1>About Me</h1>
-    <p>
-      My name is David Etler. I am currently a Computer Engineering student at
-      the New Jersey Institute of Technology. I am interested in computer
-      programming, mathematical and physical simulations, and digital logic. On
-      this site you can find various information about me, mostly descriptions
-      of projects.
-    </p>
-
-    <h2>Skills</h2>
-    <p>
-        Here's a quick overview of what I'm good at.
-    </p>
-    <h3 class="skill_heading">Computer Programming</h3>
-    <ul class="skilllist">
-        <li>3 years of experience programming in <em>Java and C#</em></li>
-	    <li>1 year experience programming in <em>Python</em> along with the <em>SciPy Stack</em></li>
-		<li>Proficiency in programming in <em>C and C++</em></li>
-    </ul>
-    <h3 class="skill_heading">Computer Software Proficiencies</h3>
-    <ul class="skilllist">
-        <li>5+ years of experience writing documents in <em>LaTeX</em> and <em>Beamer</em></li>
-        <li>Experience in <em>MATLAB</em>, <em>Wolfram Mathematica</em>, and <em>Autodesk AutoCAD</em></li>
-        <li>Proficent with the <em>git</em> version control system</li>
-        <li>Confortable with <em>UNIX-like systems</em> and <em>shell scripting</em></li>
-    </ul>
-
-
-    <h2>Contact Me</h2>
-    <p>
-        You can contact my by email at <span class="email">davidretler@gmail.com</span>.
-    </p>
-
-
-    <h2>Note</h2>
-    <p>
-        This site is still under construction, and I am by no means a web developer.
-        Expect a few glitches/typos here and there, as I work on things.
-    </p>
-
+  <div class="content" id="content_panel">
+      <h1>This site requires JavaScript</h1>
+      <p>
+          It looks like you don't have JavaScript enabled. Because this is the
+          21st century, this site requires JavaScript for interactivity. If
+          you block JavaScript for security reasons, you can
+          <a href="https://github.com/davidretler/davidretler.github.io">peruse the code</a>
+          to make sure it's safe. (This site uses jQuery for dynamically changing
+          div content rather than loading static pages. This is faster and uses
+          less bandwidth.)
+      </p>
+      <p>
+          If JavaScript is the bane of your existence you can still view the
+          <a href="./static/index.html">static version of the site</a>,
+          but it's not as pretty.
+      </p>
   </div>
 
 </div>
+
+<script type="text/javascript">
+           $(document).ready(function(){
+               $('#content_panel').load('./about.html');
+           });
+
+           $( "#about" ).click(function() {
+               $('#content_panel').load('./about.html');
+           });
+
+           $( "#projects" ).click(function() {
+               $('#content_panel').load('./projects.html');
+           });
+
+</script>
 
 </body>
 </html>
