@@ -13,16 +13,29 @@ $(document).ready(function(){
 /*
  * Code to change content when menubar item is clicked
  */
-
 $( "#about" ).click(function() {
-    $('#content_panel').load('./about.html');
+    $('#content_panel').load('/about.html');
     $('.active').toggleClass("active");
     $('#about').toggleClass("active");
 });
 $( "#projects" ).click(function() {
-    $('#content_panel').load('./projects.html');
+    $('#content_panel').load('/projects.html');
     $('.active').toggleClass("active");
     $('#projects').toggleClass("active");
+});
+$("#resume").click(function() {
+    $('#content_panel').load('/resume.html');
+    $('.active').toggleClass("active");
+    $('#resume').toggleClass("active");
+
+    var pdf = new PDFObject({
+        url: "/content/Resume/david_etler.pdf",
+        id: "pdfRendered",
+        pdfOpenParams: {
+            view: "FitH"
+        }
+    }).embed("pdfRenderer");
+    alert("Attempted to load PDF.");
 });
 
 /*
@@ -40,7 +53,7 @@ function resize()
     //for larger devices, limit content to 800px
     else {
         $(".content").width(800);
-        $(".sidebar").width(180);
+        $(".sidebar").width(220);
     }
 
     //if the content panel is too tall, extend the sidebar for the entire document

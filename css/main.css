@@ -9,7 +9,7 @@
 }
 
 .header {
-  width: 100%;
+  width: 220px;
   background-color: rgb(0, 0, 0);
   color: white;
   font-size: 30pt;
@@ -26,7 +26,7 @@
   overflow: hidden;
   margin-right: 40px;
   height: calc(100% - 55px);
-  width: 180px;
+  width: 220px;
   text-indent: 15px;
   position: relative;
   font-weight: lighter;
@@ -101,6 +101,12 @@ a {
 
 .content em {
     font-weight: 200;
+}
+
+#pdfRenderer
+{
+    width: 800px;
+    height: 100%;
 }
 
 .email {
