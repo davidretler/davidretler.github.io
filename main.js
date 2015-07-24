@@ -32,11 +32,15 @@ $( "#projects" ).click(function() {
 function resize()
 {
     $(".sidebar").height($(document).height() - $(".sidebar").offset().top);
-    if($(window).width() < 800 + $(".content").offset().left) {
-        $(".content").width($(window).width() - $(".content").offset().left);
+    //for smaller devices, have content take up screen
+    if($(window).width() < 1028) {
+        $(".sidebar").width(180);
+        $(".content").outerWidth($(window).width() - $(".sidebar").outerWidth() -100);
     }
+    //for larger devices, limit content to 800px
     else {
         $(".content").width(800);
+        $(".sidebar").width(180);
     }
 
 

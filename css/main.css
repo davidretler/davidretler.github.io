@@ -74,6 +74,7 @@ a {
   width: 800px;
   color: black;
   overflow: auto;
+  float:left;
   font-weight: 300;
 }
 
