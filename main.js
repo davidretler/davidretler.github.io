@@ -24,18 +24,11 @@ $( "#projects" ).click(function() {
     $('#projects').toggleClass("active");
 });
 $("#resume").click(function() {
-    $('#content_panel').load('/resume.html');
     $('.active').toggleClass("active");
     $('#resume').toggleClass("active");
 
-    var pdf = new PDFObject({
-        url: "/content/Resume/david_etler.pdf",
-        id: "pdfRendered",
-        pdfOpenParams: {
-            view: "FitH"
-        }
-    }).embed("pdfRenderer");
-    alert("Attempted to load PDF.");
+    window.location="/content/Resume/david_etler.pdf";
+
 });
 
 /*
