@@ -59,17 +59,20 @@ function setActive(element)
  */
 function resize()
 {
-    $(".sidebar").height($(document).height() - $(".sidebar").offset().top);
+    //sidebar always takes up height of document, and a little more as buffer (doesn't matter, won't scroll)
+    $(".sidebar").height($(document).height() - $(".sidebar").offset().top + 10);
+    //sidebar width is constant
+    $(".sidebar").width(220);
+    $(".content").offset({top: 0, left: 255});
+
     //for smaller devices, have content take up screen
     if($(window).width() < 1028) {
-        $(".sidebar").width(220);
         //content takes up everything minus sidebar and sum arbitrary but necessary padding
         $(".content").outerWidth($(window).width() - $(".sidebar").outerWidth() -100);
     }
     //for larger devices, limit content to 800px
     else {
         $(".content").width(800);
-        $(".sidebar").width(220);
     }
 
     //if the content panel is too tall, extend the sidebar for the entire document

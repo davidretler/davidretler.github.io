@@ -29,7 +29,7 @@
   height: calc(100% - 55px);
   width: 220px;
   text-indent: 15px;
-  position: relative;
+  position: fixed;
   font-weight: lighter;
   padding: 0 0 0 0;
 }
