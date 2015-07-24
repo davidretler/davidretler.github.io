@@ -6,12 +6,10 @@
 $(document).ready(function(){
     $('#content_panel').load('/about.html');   //load the about me
     resize();
-
+    $(".item>.sublist").hide();                 //hide all submenus
     $('.active').toggleClass("active");         //turn off all active buttons
     $('#about').toggleClass("active");          //toggle the about me as active
-
-    $(".item>.sublist").hide();
-
+    $('#about>.sublist').show();                //show the about sublist
 });
 
 /*
@@ -45,10 +43,14 @@ $("#resume").click(function() {
  */
 function setActive(element)
 {
-    $('.active').toggleClass("active"); //turn off all active elements
-    element.toggleClass("active");      //set the current element to active
-    $('.item>.sublist').slideUp();         //hide all the sublists
-    element.find('.sublist').slideDown();
+    //if the selected element isn't already active
+    if(!element.hasClass("active"))
+    {
+        $('.active').toggleClass("active"); //turn off all active elements
+        element.toggleClass("active");      //set the current element to active
+        $('.item>.sublist').slideUp();         //hide all the sublists
+        element.find('.sublist').slideDown();
+    }
 }
 
 /*
@@ -60,7 +62,8 @@ function resize()
     $(".sidebar").height($(document).height() - $(".sidebar").offset().top);
     //for smaller devices, have content take up screen
     if($(window).width() < 1028) {
-        $(".sidebar").width(180);
+        $(".sidebar").width(220);
+        //content takes up everything minus sidebar and sum arbitrary but necessary padding
         $(".content").outerWidth($(window).width() - $(".sidebar").outerWidth() -100);
     }
     //for larger devices, limit content to 800px

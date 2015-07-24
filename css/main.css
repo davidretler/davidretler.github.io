@@ -9,7 +9,7 @@
 }
 
 .header {
-  width: 220px;
+  width: auto;
   background-color: rgb(0, 0, 0);
   color: white;
   font-size: 30pt;
@@ -17,6 +17,7 @@
   text-indent: 15px;
   height: 55px;
   padding: 0 0 0 0;
+  overflow: visible;
 }
 
 .sidebar {
