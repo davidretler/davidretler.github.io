@@ -25,11 +25,10 @@
   float: left;
   overflow: hidden;
   margin-right: 40px;
-  /*height: calc(100% - 55px);*/
+  height: calc(100% - 55px);
   width: 180px;
   text-indent: 15px;
   position: relative;
-  /*padding-top: 10px;*/
   font-weight: lighter;
   padding: 0 0 0 0;
 }

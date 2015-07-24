@@ -42,35 +42,15 @@
           <a href="./static/index.html">static version of the site</a>,
           but it's not as pretty.
       </p>
+      <p>
+          <b>You may see this screen for a few seconds as the content loads.</b>
+      </p>
   </div>
 
 </div>
 
-<script type="text/javascript">
-           $(document).ready(function(){
-               $('#content_panel').load('./about.html');
-               $('.active').toggleClass("active");
-               $('#about').toggleClass("active");
-               $("#sidebar").height($(document).height() - $("#sidebar").offset().top);
-           });
+<script src="main.js"></script>
 
-           $( "#about" ).click(function() {
-               $('#content_panel').load('./about.html');
-               $('.active').toggleClass("active");
-               $('#about').toggleClass("active");
-           });
-
-           $( "#projects" ).click(function() {
-               $('#content_panel').load('./projects.html');
-               $('.active').toggleClass("active");
-               $('#projects').toggleClass("active");
-           });
-
-           $(window).on('resize',function(){
-               $(".sidebar").height($(document).height() - $(".sidebar").offset().top);
-           });
-
-</script>
 
 </body>
 </html>
