@@ -3,17 +3,14 @@
  * defualt and dynamically sizes the content
  */
 $(document).ready(function(){
-    $('#content_panel').load('/about.html');   //load the about me
+    //$('#content_panel').load('/about.html');   //load the about me
     resize();
 
     $(".item>.sublist").hide();                 //hide all submenus
     $('.active').toggleClass("active");         //turn off all active buttons
 
-    $('#about').toggleClass("active");          //toggle the about me as active
-    $('#about>.sublist').show();                //show the about sublist
-
-    var url = window.location.href;
-    var id = url.substring(url.lastIndexOf("/") + 1);
+    //load content based on hash
+    var id = window.location.hash;
     //if the ID'd element exists and `id` isn't blank, set it active
     if(!( $(id) == [] ) && !( id == "" ))
     {
@@ -22,6 +19,10 @@ $(document).ready(function(){
         {
             $(id).click();
         }
+    }
+    //if no content to load defualt to about
+    else {
+        $("#about").click();
     }
 
 });
@@ -32,10 +33,12 @@ $(document).ready(function(){
 $( "#about" ).click(function() {
     $('#content_panel').load('/about.html');
     setActive($("#about"));
+    window.location.hash = "#about";
 });
 $( "#projects" ).click(function() {
     $('#content_panel').load('/projects.html');
     setActive($("#projects"));
+    window.location.hash = "#projects";
 });
 
 /*
