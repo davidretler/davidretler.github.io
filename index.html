@@ -12,9 +12,9 @@
 <body>
 <div id="wrapper">
 
-  <div class="header">David Etler</div>
+  <div class="header" id="header">David Etler</div>
 
-  <div class="sidebar">
+  <div class="sidebar" id="sidebar">
     <span class="item" id="about">About Me</span>
 
     <span class="item" id="projects">Projects
@@ -51,6 +51,7 @@
                $('#content_panel').load('./about.html');
                $('.active').toggleClass("active");
                $('#about').toggleClass("active");
+               $("#sidebar").height($(document).height() - $("#sidebar").offset().top);
            });
 
            $( "#about" ).click(function() {
@@ -63,6 +64,10 @@
                $('#content_panel').load('./projects.html');
                $('.active').toggleClass("active");
                $('#projects').toggleClass("active");
+           });
+
+           $(window).on('resize',function(){
+               $(".sidebar").height($(document).height() - $(".sidebar").offset().top);
            });
 
 </script>
