@@ -11,10 +11,10 @@ $(document).ready(function(){
      /*
       * Fades the div out, loads new content, and fades back in
       */
-     function fadeAndLoad(content_url){
-         $( "#content_panel" ).fadeOut(400, function(){
+     function fadeAndLoad(content_url) {
+         $( "#content_panel" ).fadeOut(300, function(){
              $( "#content_panel" ).load(content_url, function(){
-                 $( "#content_panel" ).fadeIn(400);
+                 $( "#content_panel" ).fadeIn(300);
              });
          });
      }
@@ -22,11 +22,13 @@ $(document).ready(function(){
     /*
      * Code to change content when menubar item is clicked
      */
-    $( ".sidebar .item" ).click(function(){
+    $( ".sidebar .item" ).click(function() {
         //if the element clicked has a name+id (ie is a standard item)
         if($(this).find(".name") != [] && $(this).attr("id") != [])
         {
-            if( !( $(this).hasClass("active") ) ) {
+            //if the element is not already active and isn't to be opened in a new tab
+            if( !( $(this).hasClass("active") ) && !( $(this).hasClass("external_link") ) ) {
+
                 //load the content (should be an HTML file in root directory with name being `the id`.html)
                 fadeAndLoad("/" + $(this).attr("id") + ".html");
 
