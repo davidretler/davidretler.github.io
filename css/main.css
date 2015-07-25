@@ -27,13 +27,13 @@
   float: left;
   overflow: hidden;
   margin-right: 40px;
-  height: calc(100% - 55px);
+  height: 100%;
   width: 230px;
   text-indent: 15px;
   position: fixed;
   font-weight: lighter;
   padding: 0 0 0 0;
-  display: none;
+
 }
 
 a {
@@ -76,8 +76,12 @@ a {
   width: 800px;
   color: black;
   overflow: auto;
-  float:left;
+  //float:left;
   font-weight: 300;
+  position: absolute;
+  left: 240px;
+  top: 10px;
+
 }
 
 .content p {

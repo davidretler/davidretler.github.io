@@ -7,7 +7,7 @@ $(document).ready(function(){
     /*
      * SET UP THE EVENT HANDLERS
      */
-    
+
      /*
       * Fades the div out, loads new content, and fades back in
       */
@@ -26,14 +26,16 @@ $(document).ready(function(){
         //if the element clicked has a name+id (ie is a standard item)
         if($(this).find(".name") != [] && $(this).attr("id") != [])
         {
-            //load the content (should be an HTML file in root directory with name being `the id`.html)
-            fadeAndLoad("/" + $(this).attr("id") + ".html");
+            if( !( $(this).hasClass("active") ) ) {
+                //load the content (should be an HTML file in root directory with name being `the id`.html)
+                fadeAndLoad("/" + $(this).attr("id") + ".html");
 
-            //set the item as the active item
-            setActive($(this));
-            //update the window hash and title, based on the id and name
-            window.location.hash = "#" + $(this).attr("id");
-            document.title = "David Etler – " + $(this).find(".name").text();
+                //set the item as the active item
+                setActive($(this));
+                //update the window hash and title, based on the id and name
+                window.location.hash = "#" + $(this).attr("id");
+                document.title = $(this).find(".name").text() + " – David Etler";
+            }
         }
     });
 
@@ -107,7 +109,6 @@ $(document).ready(function(){
     /*
      * INITIALIZE THE DOCUMENT
      */
-     $("#sidebar").show();
     resize();
 
     $(".item>.sublist").hide();                 //hide all submenus
@@ -116,13 +117,9 @@ $(document).ready(function(){
     //load content based on hash
     var id = window.location.hash;
     //if the ID'd element exists and `id` isn't blank, set it active
-    if(!( $(id) == [] ) && !( id == "" ))
+    if(!( $(id) == [] ) && $(id).hasClass("direct_sidebar"))
     {
-        //if the content linked to supports direct loading
-        if($(id).hasClass("direct_sidebar"))
-        {
-            $(id).click();
-        }
+        $(id).click();
     }
     //if no content to load defualt to about
     else {
