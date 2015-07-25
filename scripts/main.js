@@ -11,15 +11,18 @@ $(document).ready(function(){
     /*
      * Code to change content when menubar item is clicked
      */
-    $( "#about" ).click(function() {
-        $('#content_panel').load('/about.html');
-        setActive($("#about"));
-        window.location.hash = "#about";
-    });
-    $( "#projects" ).click(function() {
-        $('#content_panel').load('/projects.html');
-        setActive($("#projects"));
-        window.location.hash = "#projects";
+    $( ".sidebar .item" ).click(function(){
+        //if the element clicked has a name+id (ie is a standard item)
+        if($(this).find(".name") != [] && $(this).attr("id") != [])
+        {
+            //load the content (should be an HTML file in root directory with name being `the id`.html)
+            $( "#content_panel" ).load("/" + $(this).attr("id") + ".html");
+            //set the item as the active item
+            setActive($(this));
+            //update the window hash and title, based on the id and name
+            window.location.hash = "#" + $(this).attr("id");
+            document.title = "David Etler – " + $(this).find(".name").text();
+        }
     });
 
     /*
@@ -61,7 +64,7 @@ $(document).ready(function(){
         $(".sidebar").height($(document).height() - $(".sidebar").offset().top + 10);
         //sidebar width is constant
         $(".sidebar").width(230);
-        $(".content").offset({top: 0, left: 255});
+        $(".content").offset({top: $("#header").height(), left: 255});
 
         //for smaller devices, have content take up screen
         if($(window).width() < 1028) {
@@ -93,7 +96,7 @@ $(document).ready(function(){
     /*
      * INITIALIZE THE DOCUMENT
      */
-
+     $("#sidebar").show();
     resize();
 
     $(".item>.sublist").hide();                 //hide all submenus
