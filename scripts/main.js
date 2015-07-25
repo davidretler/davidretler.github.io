@@ -7,6 +7,17 @@ $(document).ready(function(){
     /*
      * SET UP THE EVENT HANDLERS
      */
+    
+     /*
+      * Fades the div out, loads new content, and fades back in
+      */
+     function fadeAndLoad(content_url){
+         $( "#content_panel" ).fadeOut(400, function(){
+             $( "#content_panel" ).load(content_url, function(){
+                 $( "#content_panel" ).fadeIn(400);
+             });
+         });
+     }
 
     /*
      * Code to change content when menubar item is clicked
@@ -16,7 +27,8 @@ $(document).ready(function(){
         if($(this).find(".name") != [] && $(this).attr("id") != [])
         {
             //load the content (should be an HTML file in root directory with name being `the id`.html)
-            $( "#content_panel" ).load("/" + $(this).attr("id") + ".html");
+            fadeAndLoad("/" + $(this).attr("id") + ".html");
+
             //set the item as the active item
             setActive($(this));
             //update the window hash and title, based on the id and name
@@ -90,7 +102,6 @@ $(document).ready(function(){
     $(window).on('resize',function(){
         resize();
     });
-
 
 
     /*
