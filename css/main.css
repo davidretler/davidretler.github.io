@@ -18,6 +18,7 @@
   height: 55px;
   padding: 0 0 0 0;
   overflow: visible;
+  text-align: left;
 }
 
 .sidebar {
@@ -27,7 +28,7 @@
   overflow: hidden;
   margin-right: 40px;
   height: calc(100% - 55px);
-  width: 220px;
+  width: 230px;
   text-indent: 15px;
   position: fixed;
   font-weight: lighter;
