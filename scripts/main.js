@@ -15,9 +15,20 @@ $(document).ready(function(){
          $( "#content_panel" ).fadeOut(300, function(){
              $( "#content_panel" ).load(content_url, function(){
                  $( "#content_panel" ).fadeIn(300);
+                 setContentBindings();
              });
          });
      }
+
+     /*
+      * Set bindings for items in div.content
+      */
+    function setContentBindings() {
+      //link to projects
+      $(".content a#projects").click(function(){
+        $(".sidebar .item#projects").click();
+      });
+    }
 
     /*
      * Code to change content when menubar item is clicked
@@ -30,13 +41,14 @@ $(document).ready(function(){
             if( !( $(this).hasClass("active") ) && !( $(this).hasClass("external_link") ) ) {
 
                 //load the content (should be an HTML file in root directory with name being `the id`.html)
-                fadeAndLoad("/" + $(this).attr("id") + ".html");
+                fadeAndLoad("./" + $(this).attr("id") + ".html");
 
                 //set the item as the active item
                 setActive($(this));
                 //update the window hash and title, based on the id and name
                 window.location.hash = "#" + $(this).attr("id");
                 document.title = $(this).find(".name").text() + " – David Etler";
+
             }
         }
     });
@@ -44,7 +56,7 @@ $(document).ready(function(){
     /*
      * Open Resume in new window
      */
-    $("#resume").click(function() {
+    $(".sidebar #resume").click(function() {
         var win = window.open('/content/Resume/david_etler.pdf', '_blank');
         if(win) {
             //Browser has allowed it to be opened
@@ -71,7 +83,7 @@ $(document).ready(function(){
     }
 
     /*
-     * Comand to run when window is resized, or first created
+     * Method to run when window is resized, or first created
      * Dynamically adjusts content based on screen size
      */
     function resize()
@@ -100,12 +112,14 @@ $(document).ready(function(){
         if ($('.content').height() < $(window).height()) {
             $(".sidebar").height($(window).height() - $(".sidebar").offset().top);
         }
-
-
     }
+    /*
+     * Run the resize() function whenever the window is resized, to dynamically adjust contentss based on screen size
+     */
     $(window).on('resize',function(){
         resize();
     });
+
 
 
     /*
@@ -127,5 +141,7 @@ $(document).ready(function(){
     else {
         $("#about").click();
     }
+
+
 
 });
