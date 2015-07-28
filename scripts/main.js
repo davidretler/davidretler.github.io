@@ -57,13 +57,13 @@ $(document).ready(function(){
      * Open Resume in new window
      */
     $(".sidebar #resume").click(function() {
-        var win = window.open('/content/Resume/david_etler.pdf', '_blank');
+        var win = window.open('./content/Resume/david_etler.pdf', '_blank');
         if(win) {
             //Browser has allowed it to be opened
             win.focus();
         } else {
             //if popups are blocked, just open the resume here
-            window.location.href = '/content/Resume/david_etler.pdf';
+            window.location.href = './content/Resume/david_etler.pdf';
         }
     });
 

@@ -1,2 +1,2 @@
-Disallow: /         
-Allow /index.html
+Disallow: /
+Allow: /index.html
