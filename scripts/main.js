@@ -91,7 +91,7 @@ $(document).ready(function(){
         //sidebar always takes up height of document, and a little more as buffer (doesn't matter, won't scroll)
         $(".sidebar").height($(document).height() - $(".sidebar").offset().top + 10);
         //sidebar width is constant
-        $(".sidebar").width(230);
+        //$(".sidebar").width(230);
         $(".content").offset({top: $("#header").height(), left: 255});
 
         //for smaller devices, have content take up screen
