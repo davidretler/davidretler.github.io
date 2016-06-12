@@ -4,10 +4,11 @@
 		<title>David Etler</title>
 		<meta charset="utf-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<!-- Bootstrap -->
 		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
-
+		<link href="css/theme.min.css" rel="stylesheet" media="screen"/>
 
 
 		<link href="css/main.css" rel="stylesheet"/>
@@ -16,7 +17,7 @@
 
 	<body>
 
-		<nav class="navbar navbar-inverse navbar-fixed-top">
+		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my-navbar" aria-expanded="false" aria-controls="my-navbar">
@@ -44,9 +45,9 @@
 			</div>
 		</nav>
 
-		<div class="container">
+		<div class="container" id="content_container">
 
-			<div class="content" id="#content_panel">
+			<div class="content" id="content_panel">
 				<h1>This site requires JavaScript</h1>
 				<p class="lead">This site requires JavaScript to function</p>
 			</div>
@@ -54,7 +55,7 @@
 		</div>
 		<!-- /.container -->
 
-		<script>document.getElementById("#content_panel").innerHTML="";</script>
+		<script>document.getElementById("content_panel").innerHTML="";</script>
 		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 		<script src="./js/main.js"></script>

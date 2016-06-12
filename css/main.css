@@ -12,3 +12,13 @@ body {
 .content p {
 	text-align: justify;
 }
+
+nav {
+	display: block;
+}
+
+nav a {
+	/*Remove the pesky dotted outline on clicked links in IE*/
+	outline: 0 !important; 
+	outline-style: none !important;
+}
