@@ -35,8 +35,6 @@ $(document).ready(function(){
 			{
 					$('.active').toggleClass("active"); //turn off all active elements
 					element.toggleClass("active");      //set the current element to active
-					$('.item>.sublist').slideUp();         //hide all the sublists
-					element.find('.sublist').slideDown();
 			}
 		}
  
@@ -73,7 +71,7 @@ $(document).ready(function(){
             win.focus();
         } else {
             //if popups are blocked, just open the resume here
-            window.location.href = './content/Resume/david_etler.pdf';
+            window.location.href = 'content/Resume/david_etler.pdf';
         }
     });
 		
