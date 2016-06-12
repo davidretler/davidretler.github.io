@@ -1,78 +1,62 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8" />
-
-    <link href='./fonts/Open_Sans.css' rel='stylesheet' type='text/css' />
-    <link href='./fonts/Segoe.css' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" type="text/css" href="./css/main.css" />
-
-    <script src="./scripts/jquery-1.11.3.min.js"></script>
-    <script src="./scripts/main.js"></script>
-
-    <title>David Etler</title>
-
-</head>
-
-<body>
-<div id="wrapper">
-
-  <div class="sidebar" id="sidebar">
-
-    <span class="header" id="header">David Etler</span>
-
-    <span class="item direct_sidebar" id="about">
-        <div class="name">About Me</div>
-        <div class="sublist">
-            <ul>
-                <li>Contact Me</li>
-                <li>Skills</li>
-            </ul>
-        </div>
-    </span>
-
-    <span class="item direct_sidebar" id="projects">
-        <div class ="name">Projects</div>
-        <div class="sublist">
-            <ul>
-                <li><a href="https://github.com/davidretler/RSA-Encryptor">RSA Encryption</a></li>
-                <li><a href="./content/slides.pdf">Image Compression</a></li>
-                <li><a href="https://github.com/davidretler/N-Body">Orbital Simulation</a></li>
-                <li><a href="https://github.com/Zero6/chatFlix">ChatFlix</a></li>
-                <li><a href="https://github.com/davidretler/SudokuSolverAndroid">Sudoku Solver</a></li>
-            </ul>
-        </div>
-    </span>
-
-    <span class="item external_link" id="resume">Resume</span>
-
-  </div>
-
-  <div class="content" id="content_panel">
-      <h1>This site requires JavaScript</h1>
-      <p>
-          It looks like you don't have JavaScript enabled. Because this is the
-          21st century, this site requires JavaScript for interactivity. If
-          you block JavaScript for security reasons, you can
-          <a href="https://github.com/davidretler/davidretler.github.io">peruse the code</a>
-          to make sure it's safe. (This site uses jQuery for dynamically changing
-          div content rather than loading static pages. This is faster and uses
-          less bandwidth.)
-      </p>
-      <p>
-          If JavaScript is the bane of your existence you can still view the
-          <a href="./static/index.html">static version of the site</a>,
-          but it's not as pretty.
-      </p>
-      <p>
-          <b>You may see this screen for a few seconds as the content loads.</b>
-      </p>
-  </div>
-
-</div>
+	<head>
+		<title>Bootstrap 101 Template</title>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<!-- Bootstrap -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
 
 
 
-</body>
+		<link href="css/main.css" rel="stylesheet"/>
+	</head>
+
+
+	<body>
+
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my-navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">David Etler</a>
+				</div>
+				<div id="my-navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="#about" id ="about" class="internal">About Me</a>
+						</li>
+						<li>
+							<a href="#projects" id="projects" class="internal">Projects</a>
+						</li>
+						<li>
+							<a href="" id="resume" class="external-link">Resume</a>
+						</li>
+					</ul>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+		</nav>
+
+		<div class="container">
+
+			<div class="content" id="#content_panel">
+				<h1>This site requires JavaScript</h1>
+				<p class="lead">This site requires JavaScript to function</p>
+			</div>
+
+		</div>
+		<!-- /.container -->
+	
+		<script>document.getElementById("#content_panel").innerHTML="";</script>
+		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<script src="./js/main.js"></script>
+	</body>
 </html>
